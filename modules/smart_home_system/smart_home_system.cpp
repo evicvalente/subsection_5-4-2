@@ -9,6 +9,8 @@
 #include "fire_alarm.h"
 #include "pc_serial_com.h"
 #include "event_log.h"
+#include "entryway_light.h"
+#include "light_sensor.h"
 
 //=====[Declaration of private defines]========================================
 
@@ -31,6 +33,8 @@ void smartHomeSystemInit()
     userInterfaceInit();
     fireAlarmInit();
     pcSerialComInit();
+    lightSensorInit();
+    entrywayLightInit();
 }
 
 void smartHomeSystemUpdate()
@@ -39,6 +43,7 @@ void smartHomeSystemUpdate()
     fireAlarmUpdate();    
     pcSerialComUpdate();
     eventLogUpdate();
+    entrywayLightUpdate();
     delay(SYSTEM_TIME_INCREMENT_MS);
 }
 
